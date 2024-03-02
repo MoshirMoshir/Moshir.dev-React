@@ -1,0 +1,90 @@
+/* Color references */
+/* NavBar: #1c242c */
+/* Main background: #1c1c2c  */
+/* Footer: #242434 */
+/* Additional colors */
+/* #242434 */
+/* #1c1c24 */
+/* #24242c */
+/* #202c38 */
+/* #201c24 */
+/* #242c34 */
+
+/* Font family for all text */
+body {
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Format navBar ID */
+#navBar {
+  background-color: #242434;
+}
+
+/* Image adjustments */
+.scale-image {
+  max-width: 50%; /* Scale the image down with page */
+  height: auto; /* Maintain aspect ratio */
+  border: 3px solid #fff; /* Add a 3px white border */
+  border-radius: 50%; /* Make the border circular */
+}
+
+
+/* Center the text within its column */
+.text-center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Added Spacing underneath h1 */
+.text-center div h1 {
+  margin-bottom: 20px;
+}
+
+/* Format h1 */
+h1 {
+  color: #fff; /* White text color */
+  font-size: 3vw; /* 3% of the viewport width */
+}
+
+/* Format Pre to themed fonts and size */
+pre {
+  color: #ccc; /* Light gray text color */
+  font-size: 1.5vw; /* 1.5% of the viewport width */
+  line-height: 1.75;
+  font-family: "Helvetica Neue", "Roboto", sans-serif;
+}
+
+/* Icon formatting */
+.icon {
+  color: #ccc;
+  font-size: 25px;
+  margin: 3px;
+}
+
+/* Style for fine text */
+.fine-text {
+  color: #ccc;
+  font-size: 12px;
+  margin-top: 10px; /* Add some space between the icons and the text */
+}
+
+/* Set minimum height to 100vh (Full screen) */
+.min-vh-100 {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the arrow */
+.arrow-link {
+  font-size: 36px; /* Adjust the size of the arrow icon */
+  color: #fff; /* Set the color of the arrow icon */
+}
+
+/* Add some margin to the arrow to cut above section*/
+#arrow-section {
+  margin-top: -150px; /* Adjust the spacing between the middle section and the arrow section */
+}
