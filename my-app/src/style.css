@@ -14,11 +14,21 @@
 body {
   font-family: "Helvetica Neue", "Roboto", sans-serif;
   overflow-x: hidden;
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
 }
 
 /* Format navBar ID */
 #navBar {
   background-color: #242434;
+  min-height: 5vh;
 }
 
 /* Image adjustments */
@@ -72,19 +82,42 @@ pre {
 }
 
 /* Set minimum height to 100vh (Full screen) */
-.min-vh-100 {
-  min-height: 100vh;
+#section-adjustment {
+  min-height: 95vh;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 /* Style for the arrow */
 .arrow-link {
   font-size: 36px; /* Adjust the size of the arrow icon */
   color: #fff; /* Set the color of the arrow icon */
+  background-color: transparent;
+  border: none;
 }
 
 /* Add some margin to the arrow to cut above section*/
 #arrow-section {
   margin-top: -150px; /* Adjust the spacing between the middle section and the arrow section */
+}
+
+/* hides footer by default */
+#footer-section {
+  /* display: none; */
+  /* position: fixed; */
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #242434;
+  padding: 20px 0;
+  transition: display 1s ease 1s;
+}
+
+.footer-show {
+  display: flex;
+}
+
+.footer-hide {
+  display: none;
+
 }

@@ -8,7 +8,7 @@ import './style.css';
 
 function MainSection() {
   return (
-    <section className="container-fluid min-vh-100" style={{ backgroundColor: "#1c1c2c", padding: "50px 0" }}>
+    <section id="section-adjustment" className="container-fluid" style={{ backgroundColor: "#1c1c2c", padding: "50px 0" }}>
       <div className="row justify-content-center align-items-center">
         <div className="col-md-2"></div> {/* Spacer column */}
         <div className="col-md-4 text-center">
@@ -29,33 +29,27 @@ function MainSection() {
 }
 
 function ArrowSection() {
-  const [arrowUp, setArrowUp] = useState(false);
+  const [footerVisible, setFooterVisible] = useState(false);
 
   const handleClick = () => {
-    if (arrowUp) {
-      // If the arrow is currently up, scroll to the top
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      // If the arrow is currently down, scroll to the footer
-      document.getElementById('footer-section').scrollIntoView({ behavior: 'smooth' });
-    }
-    // Toggle the state of the arrow
-    setArrowUp(!arrowUp);
+    setFooterVisible(!footerVisible);
   };
 
   return (
+    <div>
     <section id="arrow-section" className="container-fluid" style={{ backgroundColor: "#1c1c2c", padding: "20px 0" }}>
       <div className="row justify-content-center align-items-center">
         <div className="col-md-12 text-center">
-          <a href="#" className="arrow-link" onClick={handleClick}>
-            {arrowUp ? <i className="bi bi-arrow-up-circle"></i> : <i className="bi bi-arrow-down-circle"></i>}
-          </a>
+        <a href={footerVisible ? "#footer-section" : "#navBar"} className="arrow-link" onClick={handleClick}>
+              {footerVisible ? <i className="bi bi-arrow-up-circle"></i> : <i className="bi bi-arrow-down-circle"></i>}
+        </a>
         </div>
       </div>
     </section>
+    <Footer visible={footerVisible} />
+    </div>
   );
 }
-
 
 function App() {
   return (
@@ -63,7 +57,6 @@ function App() {
       <NavBar />
       <MainSection />
       <ArrowSection />
-      <Footer />
     </div>
   );
 }
