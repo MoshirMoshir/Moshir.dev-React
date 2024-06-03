@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import GameCard from '@components/games/GameCard';
 import GameCardPlaceholder from '@components/games/GameCardPlaceholder';
 import gamesData from '@assets/Games.json';
-import './Games.css'; // Import custom CSS for grid layout
 
 interface Game {
   title: string;
   description: string;
   image: string;
-  link: string;
+  playLink: string;
+  aboutLink: string;
   date: string;
-  priority: number; // Add priority field
+  priority: number;
 }
 
 const Games: React.FC = () => {
@@ -23,7 +25,7 @@ const Games: React.FC = () => {
     // Simulate an API call to fetch game data
     setTimeout(() => {
       setGames(gamesData);
-    }, 2000);
+    }, 750);
   }, []);
 
   const handleSortChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -48,27 +50,54 @@ const Games: React.FC = () => {
         <option value="newest">Newest First</option>
         <option value="oldest">Oldest First</option>
       </Form.Select>
-      <div className="games-grid">
+      <Row className="g-4">
         {sortedGames ? (
           sortedGames.map((game, index) => (
-            <div key={index} className="games-grid-item">
-              <GameCard title={game.title} description={game.description} image={game.image} link={game.link} />
-            </div>
+            <Col key={index} xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCard title={game.title} date={game.date} description={game.description} image={game.image} playLink={game.playLink} aboutLink={game.aboutLink} />
+            </Col>
           ))
         ) : (
           <>
-            <div className="games-grid-item">
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
               <GameCardPlaceholder />
-            </div>
-            <div className="games-grid-item">
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
               <GameCardPlaceholder />
-            </div>
-            <div className="games-grid-item">
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
               <GameCardPlaceholder />
-            </div>
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
+            <Col xs={12} sm={6} md={4} lg={3} className="d-flex align-items-stretch">
+              <GameCardPlaceholder />
+            </Col>
           </>
         )}
-      </div>
+      </Row>
     </Container>
   );
 };
