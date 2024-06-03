@@ -1,0 +1,11 @@
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.games-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Ensure items align to the start of the row */
+}
